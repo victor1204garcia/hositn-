@@ -437,6 +437,7 @@ section{ position: relative; padding: 120px 0; }
 .property-card[style*="display: none"]{ display: none; }
 
 .properties-more{ text-align: center; margin-top: 56px; }
+.properties-note{ text-align: center; margin-top: 22px; font-size: .78rem; color: var(--text-dimmer); }
 
 /* ---------- Services ---------- */
 .services{ background: var(--bg); }
