@@ -711,7 +711,7 @@ a.contact-method:hover{ border-color: rgba(212,175,106,.4); transform: translate
    ========================================================= */
 .cinematic-intro{
   position: relative;
-  height: 340vh;
+  height: 440vh;
   background: #000;
 }
 .cinematic-sticky{
@@ -785,6 +785,18 @@ a.contact-method:hover{ border-color: rgba(212,175,106,.4); transform: translate
     radial-gradient(ellipse 90% 70% at 50% 45%, transparent 35%, rgba(0,0,0,.5) 100%),
     linear-gradient(180deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,.15) 18%, transparent 38%, transparent 68%, #070a12 100%);
 }
+/* Opening beat: pure black stage where a golden particle field assembles
+   into the tagline, sand-typography style, before the photo/door reveal. */
+.cinematic-black-veil{
+  position: absolute; inset: 0; z-index: 8; pointer-events: none;
+  background: #000;
+  opacity: 1;
+  will-change: opacity;
+}
+.cinematic-particles{
+  position: absolute; inset: 0; z-index: 9; pointer-events: none;
+  width: 100%; height: 100%; display: block;
+}
 .cinematic-content{
   position: relative; z-index: 7;
   text-align: center;
@@ -809,12 +821,13 @@ a.contact-method:hover{ border-color: rgba(212,175,106,.4); transform: translate
 }
 
 @media (max-width: 860px){
-  .cinematic-intro{ height: 260vh; }
+  .cinematic-intro{ height: 340vh; }
   .door::before{ inset: 6% 6%; }
 }
 @media (prefers-reduced-motion: reduce){
   .cinematic-intro{ height: auto; }
   .cinematic-sticky{ position: relative; height: 90vh; }
+  .cinematic-black-veil, .cinematic-particles{ display: none; }
 }
 
 /* ---------- Hero (post-door content) ---------- */
