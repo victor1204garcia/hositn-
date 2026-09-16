@@ -43,7 +43,7 @@
 <!-- ===== HEADER ===== -->
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
-    <a href="#home" class="logo">
+    <a href="#cinematicIntro" class="logo">
       <img src="https://cdn2.uso.com.br/sites/logos/11445.png" alt="Hostin Imóveis Ltda." class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
       <span class="logo-icon" style="display:none;"><i class="fa-solid fa-cube"></i></span>
       <span class="logo-text">Hostin<em>Imóveis</em></span>
@@ -51,7 +51,7 @@
 
     <nav class="main-nav" id="mainNav">
       <ul>
-        <li><a href="#home" class="nav-link active">Início</a></li>
+        <li><a href="#cinematicIntro" class="nav-link active">Início</a></li>
         <li><a href="#sobre" class="nav-link">Sobre</a></li>
         <li><a href="#imoveis" class="nav-link">Imóveis</a></li>
         <li><a href="#servicos" class="nav-link">Serviços</a></li>
@@ -71,10 +71,34 @@
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
-<section id="home" class="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-gradient"></div>
+<!-- ===== CINEMATIC DOOR INTRO ===== -->
+<section id="cinematicIntro" class="cinematic-intro">
+  <div class="cinematic-sticky">
+    <div class="cinematic-layer cinematic-exterior" id="cineExterior" style="background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=80')"></div>
+    <div class="cinematic-layer cinematic-interior" id="cineInterior" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80')"></div>
+    <div class="cinematic-glow" id="cineGlow"></div>
+
+    <div class="cinematic-doors">
+      <div class="door door-left" id="doorLeft"></div>
+      <div class="door door-right" id="doorRight"></div>
+    </div>
+
+    <div class="cinematic-vignette"></div>
+
+    <div class="cinematic-content" id="cineText">
+      <p class="cinematic-tag">Hostin Imóveis &nbsp;•&nbsp; Desde 1993</p>
+      <h1 class="cinematic-title">Abra as portas para o <span class="text-gradient">seu novo lar</span></h1>
+    </div>
+
+    <div class="cinematic-scrollcue" id="cineScrollCue">
+      <span>Role para entrar</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HERO (pós-porta) ===== -->
+<section class="hero-post">
   <div class="hero-particles" id="heroParticles"></div>
 
   <div class="container hero-content">
@@ -103,9 +127,8 @@
           <select>
             <option>Todos os Imóveis</option>
             <option>Apartamento</option>
-            <option>Casa</option>
-            <option>Cobertura</option>
-            <option>Terreno</option>
+            <option>Geminado</option>
+            <option>Comercial</option>
           </select>
         </div>
         <div class="search-field">
@@ -127,11 +150,6 @@
         <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
     </div>
-  </div>
-
-  <div class="scroll-indicator">
-    <span>Role para explorar</span>
-    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
   </div>
 </section>
 
@@ -171,8 +189,8 @@
           </div>
         </div>
       </div>
-      <div class="about-shape shape-1"></div>
-      <div class="about-shape shape-2"></div>
+      <div class="about-shape shape-1" data-parallax="0.14"></div>
+      <div class="about-shape shape-2" data-parallax="-0.1"></div>
     </div>
 
     <div class="about-text">
@@ -247,7 +265,7 @@
               <span><i class="fa-solid fa-bed"></i> 2 quartos</span>
               <span><i class="fa-solid fa-car"></i> 1 vaga</span>
             </div>
-            <a href="https://hostinimoveis.com.br/comprar/sc/joinville/joao-costa/apartamento/76897278" target="_blank" rel="noopener" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="imovel.html?id=1" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </article>
@@ -267,7 +285,7 @@
               <span><i class="fa-solid fa-bed"></i> 2 quartos</span>
               <span><i class="fa-solid fa-car"></i> 1 vaga</span>
             </div>
-            <a href="https://hostinimoveis.com.br/comprar/sc/joinville/bucarein/apartamento/76917284" target="_blank" rel="noopener" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="imovel.html?id=2" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </article>
@@ -288,7 +306,7 @@
               <span><i class="fa-solid fa-bath"></i> 1 banheiro</span>
               <span><i class="fa-solid fa-car"></i> 2 vagas</span>
             </div>
-            <a href="https://hostinimoveis.com.br/comprar/sc/sao-francisco-do-sul/rocio-grande/geminado/72341770" target="_blank" rel="noopener" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="imovel.html?id=3" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </article>
@@ -309,7 +327,7 @@
               <span><i class="fa-solid fa-bath"></i> 1 banheiro</span>
               <span><i class="fa-solid fa-car"></i> 1 vaga</span>
             </div>
-            <a href="https://hostinimoveis.com.br/comprar/sc/sao-francisco-do-sul/ubatuba/geminado/70632786" target="_blank" rel="noopener" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="imovel.html?id=4" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </article>
@@ -330,7 +348,7 @@
               <span><i class="fa-solid fa-bath"></i> 1 banheiro</span>
               <span><i class="fa-solid fa-car"></i> 1 vaga</span>
             </div>
-            <a href="https://hostinimoveis.com.br/alugar/sc/sao-francisco-do-sul/acarai/geminado/72158864" target="_blank" rel="noopener" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="imovel.html?id=5" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </article>
@@ -351,7 +369,7 @@
               <span><i class="fa-solid fa-bath"></i> 1 banheiro</span>
               <span><i class="fa-solid fa-car"></i> 3 vagas</span>
             </div>
-            <a href="https://hostinimoveis.com.br/alugar/sc/sao-francisco-do-sul/centro/apartamento/78596147" target="_blank" rel="noopener" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="imovel.html?id=6" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </article>
@@ -371,7 +389,7 @@
               <span><i class="fa-solid fa-bath"></i> 1 banheiro</span>
               <span><i class="fa-solid fa-car"></i> 2 vagas</span>
             </div>
-            <a href="https://hostinimoveis.com.br/alugar/sc/sao-francisco-do-sul/centro/sala/78294905" target="_blank" rel="noopener" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="imovel.html?id=7" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </article>
@@ -588,7 +606,7 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a href="#home" class="logo">
+      <a href="#cinematicIntro" class="logo">
         <img src="https://cdn2.uso.com.br/sites/logos/11445.png" alt="Hostin Imóveis Ltda." class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
         <span class="logo-icon" style="display:none;"><i class="fa-solid fa-cube"></i></span>
         <span class="logo-text">Hostin<em>Imóveis</em></span>
@@ -603,7 +621,7 @@
     <div class="footer-col">
       <h4>Navegação</h4>
       <ul>
-        <li><a href="#home">Início</a></li>
+        <li><a href="#cinematicIntro">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#imoveis">Imóveis</a></li>
         <li><a href="#servicos">Serviços</a></li>
@@ -650,6 +668,7 @@
 <!-- ===== SCRIPTS ===== -->
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
 <script src="assets/js/scene3d.js"></script>
+<script src="assets/js/cinematic.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

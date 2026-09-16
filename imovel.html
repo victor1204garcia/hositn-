@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imóvel | Hostin Imóveis</title>
+<meta name="description" content="Confira os detalhes deste imóvel da Hostin Imóveis, em São Francisco do Sul - SC. Fale agora e agende sua visita.">
+<meta name="theme-color" content="#0a0e1a">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Imóvel | Hostin Imóveis">
+<meta property="og:description" content="Confira os detalhes deste imóvel da Hostin Imóveis, em São Francisco do Sul - SC.">
+<meta property="og:type" content="website">
+
+<!-- Favicon -->
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Styles -->
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===== PRELOADER ===== -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <span class="preloader-logo">Hostin<em>Imóveis</em></span>
+    <div class="preloader-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- ===== CUSTOM CURSOR ===== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="https://cdn2.uso.com.br/sites/logos/11445.png" alt="Hostin Imóveis Ltda." class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+      <span class="logo-icon" style="display:none;"><i class="fa-solid fa-cube"></i></span>
+      <span class="logo-text">Hostin<em>Imóveis</em></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html#cinematicIntro" class="nav-link">Início</a></li>
+        <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="index.html#imoveis" class="nav-link active">Imóveis</a></li>
+        <li><a href="index.html#servicos" class="nav-link">Serviços</a></li>
+        <li><a href="index.html#depoimentos" class="nav-link">Depoimentos</a></li>
+        <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="https://wa.me/5547999307277" target="_blank" rel="noopener" class="btn btn-outline btn-sm header-whats">
+        <i class="fa-brands fa-whatsapp"></i> (47) 99930-7277
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== PROPERTY HERO ===== -->
+<section class="property-hero" id="propertyHero">
+  <div class="property-hero-bg" id="propertyHeroBg" data-parallax="0.08"></div>
+  <div class="property-hero-gradient"></div>
+  <div class="container property-hero-content">
+    <nav class="breadcrumb" data-reveal>
+      <a href="index.html">Início</a> <i class="fa-solid fa-chevron-right"></i>
+      <a href="index.html#imoveis">Imóveis</a> <i class="fa-solid fa-chevron-right"></i>
+      <span id="breadcrumbTitle">Imóvel</span>
+    </nav>
+    <span class="property-hero-badge" id="propertyBadge">Venda</span>
+    <h1 class="property-hero-title" id="propertyTitle" data-reveal>Carregando imóvel...</h1>
+    <p class="property-hero-location" id="propertyLocation" data-reveal></p>
+    <div class="property-hero-price" id="propertyPrice" data-reveal></div>
+  </div>
+</section>
+
+<!-- ===== PROPERTY BODY ===== -->
+<section class="property-body-section">
+  <div class="container property-detail-grid">
+    <div class="property-main" data-reveal>
+      <div class="property-gallery" id="propertyGallery"></div>
+
+      <h2 class="property-section-title">Sobre este imóvel</h2>
+      <p class="property-description" id="propertyDescription"></p>
+
+      <h2 class="property-section-title">Características</h2>
+      <div class="property-feature-grid" id="propertyFeatureGrid"></div>
+
+      <p class="property-ref" id="propertyRef"></p>
+    </div>
+
+    <aside class="property-sidebar" data-reveal>
+      <div class="property-contact-card">
+        <h3>Interessado neste imóvel?</h3>
+        <p>Fale agora com a Hostin Imóveis e agende sua visita sem compromisso.</p>
+        <a href="#" id="propertyWhatsapp" target="_blank" rel="noopener" class="btn btn-primary btn-block">
+          <i class="fa-brands fa-whatsapp"></i> <span>Falar sobre este imóvel</span>
+        </a>
+        <a href="mailto:administrativo@hostinimoveis.com.br" class="btn btn-outline btn-block" style="margin-top:12px;">
+          <i class="fa-solid fa-envelope"></i> <span>Enviar E-mail</span>
+        </a>
+        <div class="property-contact-divider"></div>
+        <ul class="property-contact-list">
+          <li><i class="fa-brands fa-whatsapp"></i> (47) 99930-7277 — Vendas</li>
+          <li><i class="fa-brands fa-whatsapp"></i> (47) 98835-7399 — Locação</li>
+          <li><i class="fa-solid fa-envelope"></i> administrativo@hostinimoveis.com.br</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="container">
+    <div class="section-head" data-reveal style="margin-top:70px;">
+      <div>
+        <p class="section-tag"><span></span>Você também pode gostar</p>
+        <h2 class="section-title">Imóveis <span class="text-gradient">Similares</span></h2>
+      </div>
+    </div>
+    <div class="properties-grid" id="similarProperties"></div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+  <div class="cta-canvas-wrap"><canvas id="cta-canvas"></canvas></div>
+  <div class="container">
+    <div class="cta-content" data-reveal>
+      <h2>Não encontrou o que procurava?</h2>
+      <p>Fale com a Hostin Imóveis e receba uma seleção personalizada de imóveis em minutos.</p>
+      <a href="index.html#imoveis" class="btn btn-primary btn-lg">
+        <i class="fa-solid fa-magnifying-glass"></i> Ver Todos os Imóveis
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <img src="https://cdn2.uso.com.br/sites/logos/11445.png" alt="Hostin Imóveis Ltda." class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+        <span class="logo-icon" style="display:none;"><i class="fa-solid fa-cube"></i></span>
+        <span class="logo-text">Hostin<em>Imóveis</em></span>
+      </a>
+      <p>Fundada em 25 de janeiro de 1993, a Hostin Imóveis atua há mais de 30 anos com comprometimento, eficiência e transparência no mercado imobiliário de São Francisco do Sul e região.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/HostinImoveis?ref=hl" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/hostin_imoveis?utm_medium=copy_link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="index.html#cinematicIntro">Início</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#imoveis">Imóveis</a></li>
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="index.html#servicos">Venda de Imóveis</a></li>
+        <li><a href="index.html#servicos">Locação de Imóveis</a></li>
+        <li><a href="index.html#servicos">Administração de Imóveis</a></li>
+        <li><a href="index.html#servicos">Avaliação Imobiliária</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><i class="fa-brands fa-whatsapp"></i> (47) 99930-7277</li>
+        <li><i class="fa-solid fa-envelope"></i> administrativo@hostinimoveis.com.br</li>
+        <li><i class="fa-solid fa-location-dot"></i> São Francisco do Sul/SC</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; <span id="year"></span> Hostin Imóveis Ltda. — O imóvel que você procura está aqui.</p>
+      <p>CRECI 3.317-J</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING BUTTONS ===== -->
+<a href="https://wa.me/5547999307277" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+<button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="assets/js/scene3d.js"></script>
+<script src="assets/js/properties-data.js"></script>
+<script src="assets/js/property-detail.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

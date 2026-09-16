@@ -21,7 +21,9 @@
     initBackToTop();
     initSmoothAnchors();
     initParticlesFallback();
-    document.getElementById("year").textContent = new Date().getFullYear();
+    initParallax();
+    var yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
   });
 
   /* ---------------- Preloader ---------------- */
@@ -388,5 +390,37 @@
       style.textContent = "@keyframes floatDot{0%,100%{transform:translateY(0) translateX(0);opacity:.6}50%{transform:translateY(-30px) translateX(12px);opacity:1}}";
       document.head.appendChild(style);
     }
+  }
+
+  /* ---------------- Scroll parallax (background/decorative images) ---------------- */
+  function initParallax() {
+    if (prefersReducedMotion) return;
+    var els = document.querySelectorAll("[data-parallax]");
+    if (!els.length) return;
+
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var vh = window.innerHeight;
+      els.forEach(function (el) {
+        var speed = parseFloat(el.getAttribute("data-parallax")) || 0.15;
+        var rect = el.getBoundingClientRect();
+        var center = rect.top + rect.height / 2;
+        var offset = (center - vh / 2) * speed;
+        el.style.transform = "translateY(" + (-offset) + "px)";
+      });
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    update();
   }
 })();
