@@ -74,11 +74,10 @@
 <!-- ===== CINEMATIC DOOR INTRO ===== -->
 <section id="cinematicIntro" class="cinematic-intro">
   <div class="cinematic-sticky">
-    <div class="cinematic-layer cinematic-exterior" id="cineExterior" style="background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=80')"></div>
-    <div class="cinematic-layer cinematic-interior" id="cineInterior" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80')"></div>
+    <div class="cinematic-layer cinematic-interior" id="cineInterior" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80')"></div>
     <div class="cinematic-glow" id="cineGlow"></div>
 
-    <div class="cinematic-doors">
+    <div class="cinematic-doors" style="--house-photo:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1800&q=80')">
       <div class="door door-left" id="doorLeft"></div>
       <div class="door door-right" id="doorRight"></div>
     </div>
@@ -87,7 +86,7 @@
 
     <div class="cinematic-content" id="cineText">
       <p class="cinematic-tag">Hostin Imóveis &nbsp;•&nbsp; Desde 1993</p>
-      <h1 class="cinematic-title">Abra as portas para o <span class="text-gradient">seu novo lar</span></h1>
+      <h1 class="cinematic-title">Encontre o <span class="text-gradient">seu novo lar</span></h1>
     </div>
 
     <div class="cinematic-scrollcue" id="cineScrollCue">
@@ -177,6 +176,11 @@
 
 <!-- ===== SOBRE ===== -->
 <section id="sobre" class="about">
+  <div class="about-bg-anim" aria-hidden="true">
+    <span class="orb orb-gold"></span>
+    <span class="orb orb-violet"></span>
+    <span class="orb orb-soft"></span>
+  </div>
   <div class="container about-grid">
     <div class="about-visual" data-reveal>
       <div class="about-card-3d" id="aboutCard3d">
@@ -252,7 +256,7 @@
     <div class="properties-grid" id="propertiesGrid">
       <!-- Card 1 -->
       <article class="property-card" data-category="apartamento" data-reveal>
-        <div class="card-3d-wrap">
+        <a href="imovel.html?id=1" class="card-3d-wrap">
           <div class="property-image">
             <img src="https://cdnuso.com/11445/2025/05/d94c9022f080fb94406e7b256c30980c.jpg" alt="Apartamento no bairro João Costa, Joinville - SC">
             <span class="property-badge">Venda</span>
@@ -265,14 +269,14 @@
               <span><i class="fa-solid fa-bed"></i> 2 quartos</span>
               <span><i class="fa-solid fa-car"></i> 1 vaga</span>
             </div>
-            <a href="imovel.html?id=1" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <span class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-        </div>
+        </a>
       </article>
 
       <!-- Card 2 -->
       <article class="property-card" data-category="apartamento" data-reveal>
-        <div class="card-3d-wrap">
+        <a href="imovel.html?id=2" class="card-3d-wrap">
           <div class="property-image">
             <img src="https://cdnuso.com/11445/2025/05/337ff4c4ea6b5cf61d1ea800f586937b.jpg" alt="Apartamento no bairro Bucarein, Joinville - SC">
             <span class="property-badge">Venda</span>
@@ -285,14 +289,14 @@
               <span><i class="fa-solid fa-bed"></i> 2 quartos</span>
               <span><i class="fa-solid fa-car"></i> 1 vaga</span>
             </div>
-            <a href="imovel.html?id=2" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <span class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-        </div>
+        </a>
       </article>
 
       <!-- Card 3 -->
       <article class="property-card" data-category="casa" data-reveal>
-        <div class="card-3d-wrap">
+        <a href="imovel.html?id=3" class="card-3d-wrap">
           <div class="property-image">
             <img src="https://cdnuso.com/11445/2025/09/2f19970a4fd40a16c64c55ad400b3ba0.jpg" alt="Geminado no bairro Rocio Grande, São Francisco do Sul - SC">
             <span class="property-badge">Venda</span>
@@ -306,14 +310,14 @@
               <span><i class="fa-solid fa-bath"></i> 1 banheiro</span>
               <span><i class="fa-solid fa-car"></i> 2 vagas</span>
             </div>
-            <a href="imovel.html?id=3" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <span class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-        </div>
+        </a>
       </article>
 
       <!-- Card 4 -->
       <article class="property-card" data-category="casa" data-reveal>
-        <div class="card-3d-wrap">
+        <a href="imovel.html?id=4" class="card-3d-wrap">
           <div class="property-image">
             <img src="https://cdnuso.com/11445/2023/01/485f8939e380b7dcfac8fd0602ca6990.jpg" alt="Geminado no bairro Ubatuba, São Francisco do Sul - SC">
             <span class="property-badge">Venda</span>
@@ -327,14 +331,14 @@
               <span><i class="fa-solid fa-bath"></i> 1 banheiro</span>
               <span><i class="fa-solid fa-car"></i> 1 vaga</span>
             </div>
-            <a href="imovel.html?id=4" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <span class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-        </div>
+        </a>
       </article>
 
       <!-- Card 5 -->
       <article class="property-card" data-category="casa" data-reveal>
-        <div class="card-3d-wrap">
+        <a href="imovel.html?id=5" class="card-3d-wrap">
           <div class="property-image">
             <img src="https://cdnuso.com/11445/2023/03/bfb217b86a90ab94fa2b7bc6b66a252c.jpg" alt="Geminado no bairro Acaraí, São Francisco do Sul - SC">
             <span class="property-badge property-badge-rent">Aluguel</span>
@@ -348,14 +352,14 @@
               <span><i class="fa-solid fa-bath"></i> 1 banheiro</span>
               <span><i class="fa-solid fa-car"></i> 1 vaga</span>
             </div>
-            <a href="imovel.html?id=5" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <span class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-        </div>
+        </a>
       </article>
 
       <!-- Card 6 -->
       <article class="property-card" data-category="apartamento" data-reveal>
-        <div class="card-3d-wrap">
+        <a href="imovel.html?id=6" class="card-3d-wrap">
           <div class="property-image">
             <img src="https://cdnuso.com/11445/2026/06/313241654.jpg" alt="Apartamento no Centro de São Francisco do Sul - SC">
             <span class="property-badge property-badge-rent">Aluguel</span>
@@ -369,14 +373,14 @@
               <span><i class="fa-solid fa-bath"></i> 1 banheiro</span>
               <span><i class="fa-solid fa-car"></i> 3 vagas</span>
             </div>
-            <a href="imovel.html?id=6" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <span class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-        </div>
+        </a>
       </article>
 
       <!-- Card 7 -->
       <article class="property-card" data-category="comercial" data-reveal>
-        <div class="card-3d-wrap">
+        <a href="imovel.html?id=7" class="card-3d-wrap">
           <div class="property-image">
             <img src="https://cdnuso.com/11445/2026/04/2794684a7f3876b52666675e088be35e.jpg" alt="Sala comercial no Centro de São Francisco do Sul - SC">
             <span class="property-badge property-badge-rent">Aluguel</span>
@@ -389,9 +393,9 @@
               <span><i class="fa-solid fa-bath"></i> 1 banheiro</span>
               <span><i class="fa-solid fa-car"></i> 2 vagas</span>
             </div>
-            <a href="imovel.html?id=7" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>
+            <span class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-        </div>
+        </a>
       </article>
     </div>
     <p class="properties-note" data-reveal>* Imóveis, fotos e preços reais extraídos do site oficial hostinimoveis.com.br em setembro/2026 — a disponibilidade pode ter mudado, confirme com a Hostin Imóveis.</p>

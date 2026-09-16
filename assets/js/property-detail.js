@@ -23,7 +23,7 @@
       .join("");
     return (
       '<article class="property-card revealed">' +
-      '<div class="card-3d-wrap">' +
+      '<a href="imovel.html?id=' + p.id + '" class="card-3d-wrap">' +
       '<div class="property-image">' +
       '<img src="' + p.image + '" alt="' + p.title + '">' +
       '<span class="' + badgeClass + '">' + p.badge + "</span>" +
@@ -33,9 +33,107 @@
       "<h3>" + p.title + "</h3>" +
       '<p class="property-location"><i class="fa-solid fa-location-dot"></i> ' + p.bairro + ", " + p.cidade + "</p>" +
       '<div class="property-features">' + features + "</div>" +
-      '<a href="imovel.html?id=' + p.id + '" class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></a>' +
-      "</div></div></article>"
+      '<span class="property-link">Ver detalhes <i class="fa-solid fa-arrow-right"></i></span>' +
+      "</div></a></article>"
     );
+  }
+
+  function renderGallery(property) {
+    var wrap = document.getElementById("propertyGallery");
+    if (!wrap) return;
+
+    var gallery = property.gallery && property.gallery.length ? property.gallery : [property.image];
+    var multi = gallery.length > 1;
+    var current = 0;
+
+    var mainHtml =
+      '<div class="gallery-main" id="galleryMain">' +
+      '<img id="galleryMainImg" src="' + gallery[0] + '" alt="' + property.title + '">' +
+      (multi
+        ? '<button class="gallery-nav gallery-prev" id="galleryPrev" type="button" aria-label="Foto anterior"><i class="fa-solid fa-chevron-left"></i></button>' +
+          '<button class="gallery-nav gallery-next" id="galleryNext" type="button" aria-label="Próxima foto"><i class="fa-solid fa-chevron-right"></i></button>' +
+          '<span class="gallery-counter" id="galleryCounter">1 / ' + gallery.length + "</span>"
+        : "") +
+      '<button class="gallery-expand" id="galleryExpand" type="button" aria-label="Ampliar foto"><i class="fa-solid fa-expand"></i></button>' +
+      "</div>";
+
+    var thumbsHtml = multi
+      ? '<div class="gallery-thumbs" id="galleryThumbs">' +
+        gallery
+          .map(function (src, i) {
+            return '<button class="gallery-thumb' + (i === 0 ? " active" : "") + '" type="button" data-index="' + i + '"><img src="' + src + '" alt=""></button>';
+          })
+          .join("") +
+        "</div>"
+      : "";
+
+    var noteHtml = !multi
+      ? '<p class="gallery-note">Esta é a única foto disponível para este imóvel na origem dos dados. Envie mais fotos para completarmos a galeria.</p>'
+      : "";
+
+    wrap.innerHTML = mainHtml + thumbsHtml + noteHtml;
+
+    var mainImg = document.getElementById("galleryMainImg");
+    var counter = document.getElementById("galleryCounter");
+    var thumbs = Array.prototype.slice.call(wrap.querySelectorAll(".gallery-thumb"));
+    var lightbox = document.getElementById("lightbox");
+    var lightboxImg = document.getElementById("lightboxImg");
+
+    function show(index) {
+      current = (index + gallery.length) % gallery.length;
+      if (mainImg) mainImg.src = gallery[current];
+      if (counter) counter.textContent = current + 1 + " / " + gallery.length;
+      thumbs.forEach(function (t, i) { t.classList.toggle("active", i === current); });
+      if (lightboxImg && lightbox && lightbox.classList.contains("open")) lightboxImg.src = gallery[current];
+    }
+
+    thumbs.forEach(function (t) {
+      t.addEventListener("click", function () { show(parseInt(t.getAttribute("data-index"), 10)); });
+    });
+
+    var prevBtn = document.getElementById("galleryPrev");
+    var nextBtn = document.getElementById("galleryNext");
+    if (prevBtn) prevBtn.addEventListener("click", function () { show(current - 1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { show(current + 1); });
+
+    function openLightbox() {
+      if (!lightbox || !lightboxImg) return;
+      lightboxImg.src = gallery[current];
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    var expandBtn = document.getElementById("galleryExpand");
+    if (expandBtn) expandBtn.addEventListener("click", openLightbox);
+    if (mainImg) mainImg.addEventListener("click", openLightbox);
+
+    var lightboxClose = document.getElementById("lightboxClose");
+    var lightboxPrev = document.getElementById("lightboxPrev");
+    var lightboxNext = document.getElementById("lightboxNext");
+    if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+    if (lightbox) {
+      lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+    }
+    if (lightboxPrev) lightboxPrev.addEventListener("click", function () { show(current - 1); if (lightboxImg) lightboxImg.src = gallery[current]; });
+    if (lightboxNext) lightboxNext.addEventListener("click", function () { show(current + 1); if (lightboxImg) lightboxImg.src = gallery[current]; });
+    if (!multi) {
+      if (lightboxPrev) lightboxPrev.style.display = "none";
+      if (lightboxNext) lightboxNext.style.display = "none";
+    }
+
+    document.addEventListener("keydown", function (e) {
+      if (!lightbox || !lightbox.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") { show(current - 1); if (lightboxImg) lightboxImg.src = gallery[current]; }
+      if (e.key === "ArrowRight") { show(current + 1); if (lightboxImg) lightboxImg.src = gallery[current]; }
+    });
   }
 
   function initCardTiltFor(container) {
@@ -93,8 +191,7 @@
     var bgEl = document.getElementById("propertyHeroBg");
     if (bgEl) bgEl.style.backgroundImage = "url('" + property.image + "')";
 
-    var galleryEl = document.getElementById("propertyGallery");
-    if (galleryEl) galleryEl.innerHTML = '<img src="' + property.image + '" alt="' + property.title + '">';
+    renderGallery(property);
 
     var descEl = document.getElementById("propertyDescription");
     if (descEl) descEl.textContent = property.description;

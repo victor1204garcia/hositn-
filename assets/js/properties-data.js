@@ -13,6 +13,9 @@ window.HOSTIN_PROPERTIES = [
     cidade: "Joinville - SC",
     price: "R$ 248.990,00",
     image: "https://cdnuso.com/11445/2025/05/d94c9022f080fb94406e7b256c30980c.jpg",
+    gallery: [
+      "https://cdnuso.com/11445/2025/05/d94c9022f080fb94406e7b256c30980c.jpg"
+    ],
     features: [
       { icon: "fa-bed", label: "2 quartos" },
       { icon: "fa-car", label: "1 vaga" }
@@ -31,6 +34,9 @@ window.HOSTIN_PROPERTIES = [
     cidade: "Joinville - SC",
     price: "R$ 414.900,00",
     image: "https://cdnuso.com/11445/2025/05/337ff4c4ea6b5cf61d1ea800f586937b.jpg",
+    gallery: [
+      "https://cdnuso.com/11445/2025/05/337ff4c4ea6b5cf61d1ea800f586937b.jpg"
+    ],
     features: [
       { icon: "fa-bed", label: "2 quartos" },
       { icon: "fa-car", label: "1 vaga" }
@@ -49,6 +55,9 @@ window.HOSTIN_PROPERTIES = [
     cidade: "São Francisco do Sul - SC",
     price: "R$ 340.000,00",
     image: "https://cdnuso.com/11445/2025/09/2f19970a4fd40a16c64c55ad400b3ba0.jpg",
+    gallery: [
+      "https://cdnuso.com/11445/2025/09/2f19970a4fd40a16c64c55ad400b3ba0.jpg"
+    ],
     features: [
       { icon: "fa-bed", label: "2 quartos" },
       { icon: "fa-bath", label: "1 banheiro" },
@@ -68,6 +77,9 @@ window.HOSTIN_PROPERTIES = [
     cidade: "São Francisco do Sul - SC",
     price: "R$ 350.000,00",
     image: "https://cdnuso.com/11445/2023/01/485f8939e380b7dcfac8fd0602ca6990.jpg",
+    gallery: [
+      "https://cdnuso.com/11445/2023/01/485f8939e380b7dcfac8fd0602ca6990.jpg"
+    ],
     features: [
       { icon: "fa-bed", label: "2 quartos" },
       { icon: "fa-bath", label: "1 banheiro" },
@@ -87,6 +99,9 @@ window.HOSTIN_PROPERTIES = [
     cidade: "São Francisco do Sul - SC",
     price: "R$ 1.600,00",
     image: "https://cdnuso.com/11445/2023/03/bfb217b86a90ab94fa2b7bc6b66a252c.jpg",
+    gallery: [
+      "https://cdnuso.com/11445/2023/03/bfb217b86a90ab94fa2b7bc6b66a252c.jpg"
+    ],
     features: [
       { icon: "fa-bed", label: "2 quartos" },
       { icon: "fa-bath", label: "1 banheiro" },
@@ -106,6 +121,9 @@ window.HOSTIN_PROPERTIES = [
     cidade: "São Francisco do Sul - SC",
     price: "R$ 1.800,00",
     image: "https://cdnuso.com/11445/2026/06/313241654.jpg",
+    gallery: [
+      "https://cdnuso.com/11445/2026/06/313241654.jpg"
+    ],
     features: [
       { icon: "fa-bed", label: "1 quarto" },
       { icon: "fa-bath", label: "1 banheiro" },
@@ -125,6 +143,9 @@ window.HOSTIN_PROPERTIES = [
     cidade: "São Francisco do Sul - SC",
     price: "R$ 2.000,00",
     image: "https://cdnuso.com/11445/2026/04/2794684a7f3876b52666675e088be35e.jpg",
+    gallery: [
+      "https://cdnuso.com/11445/2026/04/2794684a7f3876b52666675e088be35e.jpg"
+    ],
     features: [
       { icon: "fa-bath", label: "1 banheiro" },
       { icon: "fa-car", label: "2 vagas" }
